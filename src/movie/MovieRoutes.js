@@ -1,12 +1,20 @@
 const { Router } = require("express");
 
-const { addMovie, listMovie } = require  ("./MovieControllers")
+// const { addMovie, listMovie } = require  ("./MovieControllers")
 
 const movieRouter = Router();
+const {
+	addMovie,
+	listMovie,
+	updateMovie,
+	deleteMovie,
+} = require("./movieControllers");
 
-// use http verb post to aadd data ro our movie endpoint
+
 
 movieRouter.post("/movie", addMovie);
 movieRouter.get("/movie", listMovie);
+movieRouter.patch("/movie", updateMovie);
+movieRouter.delete("/movie", deleteMovie);
 
 module.exports = movieRouter; 
